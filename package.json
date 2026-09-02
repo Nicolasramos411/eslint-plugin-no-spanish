@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-no-es",
+  "name": "@nicolasramos41/eslint-plugin-no-es",
   "version": "0.3.0",
   "description": "ESLint rules that keep a JS/TS codebase in English: flags Spanish comments and Spanish variable/function/class names.",
   "main": "lib/index.js",

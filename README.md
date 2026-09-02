@@ -1,4 +1,4 @@
-# eslint-plugin-no-es
+# @nicolasramos41/eslint-plugin-no-es
 
 Two ESLint rules that keep a JS/TS codebase in English:
 
@@ -15,7 +15,7 @@ directive that also works with the standalone CLI below — see
 ## Install
 
 ```bash
-npm install -D eslint-plugin-no-es
+npm install -D @nicolasramos41/eslint-plugin-no-es
 ```
 
 If you're vendoring this as a subfolder of a monorepo instead of
@@ -41,8 +41,8 @@ Type declarations for the rule options and `configs.recommended` ship in
 ### Flat config (`eslint.config.js` / `eslint.config.mjs`, ESLint ≥ 9)
 
 ```js
-const noEs = require('eslint-plugin-no-es');
-// or: import noEs from 'eslint-plugin-no-es';
+const noEs = require('@nicolasramos41/eslint-plugin-no-es');
+// or: import noEs from '@nicolasramos41/eslint-plugin-no-es';
 
 module.exports = [
   // ...your existing config (next/core-web-vitals, etc.)
@@ -67,18 +67,22 @@ module.exports = [
 ### Legacy config (`.eslintrc.json`)
 
 ESLint auto-derives the plugin's short name from the package name
-(`eslint-plugin-no-es` → `no-es`), so this matches the flat config's
-`no-es/...` rule IDs above with no extra aliasing:
+(`@nicolasramos41/eslint-plugin-no-es` → `@nicolasramos41/no-es`):
 
 ```json
 {
-  "plugins": ["no-es"],
+  "plugins": ["@nicolasramos41/no-es"],
   "rules": {
-    "no-es/no-es-comment": "warn",
-    "no-es/no-es-identifier": "warn"
+    "@nicolasramos41/no-es/no-es-comment": "warn",
+    "@nicolasramos41/no-es/no-es-identifier": "warn"
   }
 }
 ```
+
+That's more to type than the flat config's `no-es/...`, since the flat
+config's alias is whatever key *you* pick in `plugins: { ... }` — see
+above. The legacy config's prefix, by contrast, is tied to the scoped
+package name and isn't something this package can shorten for you.
 
 ## Rule: `no-es-comment`
 
@@ -268,10 +272,13 @@ collision until you've reviewed it and either drop the word or add it to
 ```bash
 cd eslint-plugin-no-es
 npm login
-npm publish
+npm publish --access public
 ```
 
-(`eslint-plugin-no-es` is unscoped, so it publishes public by default —
-no `--access public` needed, unlike a scoped `@you/...` package.)
+`@nicolasramos41/eslint-plugin-no-es` is scoped, so `npm publish` defaults
+to *restricted* (private, requires a paid plan) unless you pass
+`--access public` explicitly — an unscoped `eslint-plugin-no-es` name was
+rejected by npm's typosquat check as too similar to the existing
+`eslint-plugin-node`.
 
-Then in consuming repos: `npm install -D eslint-plugin-no-es`.
+Then in consuming repos: `npm install -D @nicolasramos41/eslint-plugin-no-es`.
