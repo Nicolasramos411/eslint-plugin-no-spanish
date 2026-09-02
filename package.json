@@ -42,7 +42,7 @@
     }
   },
   "dependencies": {
-    "franc-min": "^6.2.0",
+    "franc-min": "^5.0.0",
     "stopwords-es": "^0.3.0"
   },
   "devDependencies": {
