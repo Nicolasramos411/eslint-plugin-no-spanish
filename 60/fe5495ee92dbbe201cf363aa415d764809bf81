@@ -1,0 +1,27 @@
+lib/index.js
+  s_f2ae4c0ab9c070::t_9a907d17b01400 8,18-20,22,24-25
+test/flat-config.test.js
+  s_f2ae4c0ab9c070::t_71a5f1bfeaa309 16,19
+package.json
+  s_f2ae4c0ab9c070::t_33ab02f2656e7c 27,29,31
+  s_f2ae4c0ab9c070::t_e64da3d2221ab0 2
+  s_f2ae4c0ab9c070::t_9eb21e70addb84 19
+README.md
+  s_f2ae4c0ab9c070::t_07f5916d7973e0 1,18,44-45,49,58,60-61,70-71,75,77-78,108,129,214,223-228,271,274-277,279
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "60fe5495ee92dbbe201cf363aa415d764809bf81",
+  "prompts": {},
+  "sessions": {
+    "s_f2ae4c0ab9c070": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0e15891-bc72-4c18-b0cf-e0fca3f8ce74",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Nicolás José Ramos Bascuñan <80288266+Nicolasramos411@users.noreply.github.com>"
+    }
+  }
+}
