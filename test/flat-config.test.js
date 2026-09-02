@@ -13,10 +13,10 @@ describe('flat config (eslint.config.js)', () => {
       { filename: 'test.js' },
     );
     assert.strictEqual(messages.length, 1);
-    assert.strictEqual(messages[0].ruleId, 'no-es/no-es-identifier');
+    assert.strictEqual(messages[0].ruleId, 'no-spanish/no-es-identifier');
   });
 
-  it('rules can be referenced individually with the "no-es" plugin key', () => {
+  it('rules can be referenced individually under any plugin key you choose', () => {
     const linter = new Linter({ configType: 'flat' });
     const config = [
       {

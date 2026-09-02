@@ -1,4 +1,4 @@
-# @nicolasramos41/eslint-plugin-no-es
+# eslint-plugin-no-spanish
 
 Two ESLint rules that keep a JS/TS codebase in English:
 
@@ -15,7 +15,7 @@ directive that also works with the standalone CLI below — see
 ## Install
 
 ```bash
-npm install -D @nicolasramos41/eslint-plugin-no-es
+npm install -D eslint-plugin-no-spanish
 ```
 
 If you're vendoring this as a subfolder of a monorepo instead of
@@ -41,12 +41,12 @@ Type declarations for the rule options and `configs.recommended` ship in
 ### Flat config (`eslint.config.js` / `eslint.config.mjs`, ESLint ≥ 9)
 
 ```js
-const noEs = require('@nicolasramos41/eslint-plugin-no-es');
-// or: import noEs from '@nicolasramos41/eslint-plugin-no-es';
+const noSpanish = require('eslint-plugin-no-spanish');
+// or: import noSpanish from 'eslint-plugin-no-spanish';
 
 module.exports = [
   // ...your existing config (next/core-web-vitals, etc.)
-  noEs.configs.recommended, // both rules at "warn"
+  noSpanish.configs.recommended, // both rules at "warn"
 ];
 ```
 
@@ -55,10 +55,10 @@ To set your own severity instead of the preset:
 ```js
 module.exports = [
   {
-    plugins: { 'no-es': noEs },
+    plugins: { 'no-spanish': noSpanish },
     rules: {
-      'no-es/no-es-comment': 'error',
-      'no-es/no-es-identifier': 'warn',
+      'no-spanish/no-es-comment': 'error',
+      'no-spanish/no-es-identifier': 'warn',
     },
   },
 ];
@@ -67,22 +67,18 @@ module.exports = [
 ### Legacy config (`.eslintrc.json`)
 
 ESLint auto-derives the plugin's short name from the package name
-(`@nicolasramos41/eslint-plugin-no-es` → `@nicolasramos41/no-es`):
+(`eslint-plugin-no-spanish` → `no-spanish`), so this matches the flat
+config's `no-spanish/...` rule IDs above with no extra aliasing:
 
 ```json
 {
-  "plugins": ["@nicolasramos41/no-es"],
+  "plugins": ["no-spanish"],
   "rules": {
-    "@nicolasramos41/no-es/no-es-comment": "warn",
-    "@nicolasramos41/no-es/no-es-identifier": "warn"
+    "no-spanish/no-es-comment": "warn",
+    "no-spanish/no-es-identifier": "warn"
   }
 }
 ```
-
-That's more to type than the flat config's `no-es/...`, since the flat
-config's alias is whatever key *you* pick in `plugins: { ... }` — see
-above. The legacy config's prefix, by contrast, is tied to the scoped
-package name and isn't something this package can shorten for you.
 
 ## Rule: `no-es-comment`
 
@@ -109,7 +105,7 @@ Options:
 
 ```json
 {
-  "no-es/no-es-comment": ["warn", {
+  "no-spanish/no-es-comment": ["warn", {
     "minLength": 12,
     "minWords": 3,
     "ignorePatterns": ["^TODO", "^eslint-disable"]
@@ -130,7 +126,7 @@ Options:
 
 ```json
 {
-  "no-es/no-es-identifier": ["warn", {
+  "no-spanish/no-es-identifier": ["warn", {
     "minRatio": 0.5,
     "ignoreNames": ["rut", "folio", "dte", "giro"],
     "extraWords": ["envio", "bodega"]
@@ -215,7 +211,7 @@ Benchmark on this repo (2,258 `.ts`/`.tsx` files, 10-core machine):
 Through ESLint, the standard directives just work:
 
 ```ts
-// eslint-disable-next-line no-es/no-es-identifier
+// eslint-disable-next-line no-spanish/no-es-identifier
 const montoTotal = 1;
 ```
 
@@ -224,12 +220,12 @@ const montoTotal = 1;
 package's own `no-es-ignore-next-line`/`no-es-ignore-line` itself — all
 alias-agnostic (it matches by the rule's short name, e.g.
 `no-es-identifier`, regardless of what you aliased the plugin to:
-`no-es/no-es-identifier` and `some-alias/no-es-identifier` both work).
-`no-es-ignore-next-line`/`no-es-ignore-line` are also understood by the
-ESLint rules themselves, so that one directive is portable between both
-ways of running this package — useful since your `eslint-disable` prefix
-otherwise depends on how *you* aliased the plugin, which this package
-can't control:
+`no-spanish/no-es-identifier` and `some-alias/no-es-identifier` both
+work). `no-es-ignore-next-line`/`no-es-ignore-line` are also understood
+by the ESLint rules themselves, so that one directive is portable
+between both ways of running this package — useful since your
+`eslint-disable` prefix otherwise depends on how *you* aliased the
+plugin, which this package can't control:
 
 ```ts
 // no-es-ignore-next-line
@@ -272,13 +268,12 @@ collision until you've reviewed it and either drop the word or add it to
 ```bash
 cd eslint-plugin-no-es
 npm login
-npm publish --access public
+npm publish
 ```
 
-`@nicolasramos41/eslint-plugin-no-es` is scoped, so `npm publish` defaults
-to *restricted* (private, requires a paid plan) unless you pass
-`--access public` explicitly — an unscoped `eslint-plugin-no-es` name was
-rejected by npm's typosquat check as too similar to the existing
-`eslint-plugin-node`.
+`eslint-plugin-no-spanish` is unscoped, so it publishes public by
+default — no `--access public` needed. (An earlier, more literal name,
+`eslint-plugin-no-es`, was rejected by npm's typosquat check as too
+similar to the existing `eslint-plugin-node`.)
 
-Then in consuming repos: `npm install -D @nicolasramos41/eslint-plugin-no-es`.
+Then in consuming repos: `npm install -D eslint-plugin-no-spanish`.

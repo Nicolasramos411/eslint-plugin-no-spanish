@@ -1,5 +1,5 @@
 {
-  "name": "@nicolasramos41/eslint-plugin-no-es",
+  "name": "eslint-plugin-no-spanish",
   "version": "0.3.0",
   "description": "ESLint rules that keep a JS/TS codebase in English: flags Spanish comments and Spanish variable/function/class names.",
   "main": "lib/index.js",
@@ -16,6 +16,7 @@
     "eslintplugin",
     "eslint-plugin",
     "spanish",
+    "no-spanish",
     "i18n",
     "localization",
     "code-style"
@@ -23,11 +24,11 @@
   "author": "Nicolás Ramos (https://github.com/nicolasramos411)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicolasramos411/eslint-plugin-no-es.git"
+    "url": "git+https://github.com/nicolasramos411/eslint-plugin-no-spanish.git"
   },
-  "homepage": "https://github.com/nicolasramos411/eslint-plugin-no-es#readme",
+  "homepage": "https://github.com/nicolasramos411/eslint-plugin-no-spanish#readme",
   "bugs": {
-    "url": "https://github.com/nicolasramos411/eslint-plugin-no-es/issues"
+    "url": "https://github.com/nicolasramos411/eslint-plugin-no-spanish/issues"
   },
   "scripts": {
     "test": "mocha test --recursive"
