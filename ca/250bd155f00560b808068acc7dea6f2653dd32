@@ -1,0 +1,21 @@
+package.json
+  s_f2ae4c0ab9c070::t_b9ffaa6de02d05 3
+package-lock.json
+  s_f2ae4c0ab9c070::t_2f8fce0cd9de56 2-3,8-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "ca250bd155f00560b808068acc7dea6f2653dd32",
+  "prompts": {},
+  "sessions": {
+    "s_f2ae4c0ab9c070": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0e15891-bc72-4c18-b0cf-e0fca3f8ce74",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Nicolás José Ramos Bascuñan <80288266+Nicolasramos411@users.noreply.github.com>"
+    }
+  }
+}
