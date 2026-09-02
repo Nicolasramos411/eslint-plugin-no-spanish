@@ -1,0 +1,23 @@
+package.json
+  s_f2ae4c0ab9c070::t_12eebcfb15726d 45
+lib/utils/detect-spanish.js
+  s_f2ae4c0ab9c070::t_41326b17a8eb9a 3-6
+package-lock.json
+  s_f2ae4c0ab9c070::t_543e01678f2b2a 2,8,12,841-843,1284-1286,1289,1829-1831,2300-2302,2305-2307,2314-2319
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "83039516224a6c20de6330fcd4e56e180d439dd4",
+  "prompts": {},
+  "sessions": {
+    "s_f2ae4c0ab9c070": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0e15891-bc72-4c18-b0cf-e0fca3f8ce74",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Nicolás José Ramos Bascuñan <80288266+Nicolasramos411@users.noreply.github.com>"
+    }
+  }
+}
