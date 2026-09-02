@@ -1,0 +1,60 @@
+{
+  "name": "eslint-plugin-no-es",
+  "version": "0.3.0",
+  "description": "ESLint rules that keep a JS/TS codebase in English: flags Spanish comments and Spanish variable/function/class names.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "no-es-check": "bin/no-es-check.js"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "spanish",
+    "i18n",
+    "localization",
+    "code-style"
+  ],
+  "author": "Nicolás Ramos (https://github.com/nicolasramos411)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolasramos411/eslint-plugin-no-es.git"
+  },
+  "homepage": "https://github.com/nicolasramos411/eslint-plugin-no-es#readme",
+  "bugs": {
+    "url": "https://github.com/nicolasramos411/eslint-plugin-no-es/issues"
+  },
+  "scripts": {
+    "test": "mocha test --recursive"
+  },
+  "peerDependencies": {
+    "@swc/core": "^1.5.0",
+    "eslint": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@swc/core": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "franc-min": "^6.2.0",
+    "stopwords-es": "^0.3.0"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.5.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "an-array-of-english-words": "^2.0.0",
+    "eslint": "^8.57.0",
+    "mocha": "^10.4.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
