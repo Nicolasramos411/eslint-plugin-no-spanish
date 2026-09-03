@@ -5,6 +5,18 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.8] - 2026-09-03
+
+### Fixed
+
+- 0.3.7's fix moved the stage-publish step into a separate `release.yml`
+  file, which then failed npm auth (E401): the npmjs.com trusted
+  publisher for this package is bound to the exact filename
+  `publish.yml`, and its OIDC token is rejected from any other workflow
+  file regardless of permissions. Merged everything back into
+  `publish.yml`, gated by `github.event_name` (push vs. a human-created
+  release) instead of splitting into two files.
+
 ## [0.3.7] - 2026-09-03
 
 ### Fixed

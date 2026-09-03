@@ -1,22 +1,32 @@
 name: Publish
 
-# Fallback path for a release created by a human through the GitHub UI
-# (or with a PAT). release.yml is the primary path — it creates the
-# release AND stages the npm publish in one job, because a release
-# created with the default GITHUB_TOKEN (as release.yml's does) does not
-# trigger this workflow; see the comment in release.yml.
+# Two ways in:
+# - push to main with a package.json version bump: creates the GitHub
+#   Release (using this version's CHANGELOG.md section as notes) if one
+#   doesn't exist yet, then stages the npm publish.
+# - a GitHub Release published by a human (fallback path): stages the
+#   npm publish for it directly.
+#
+# Both live in this one workflow, in this one file, because npmjs.com's
+# trusted publisher config for this package is bound to this exact
+# filename (publish.yml) — a differently-named workflow's OIDC token is
+# rejected even with the same permissions.
 on:
+  push:
+    branches: [main]
+    paths:
+      - package.json
   release:
     types: [published]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
       - uses: actions/checkout@v4
@@ -24,12 +34,35 @@ jobs:
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
+      - name: Ensure a release exists for this version, decide whether to publish
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            # A human already created the release; always publish it.
+            echo "should_publish=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v$VERSION"
+          if gh release view "$TAG" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "should_publish=false" >> "$GITHUB_OUTPUT"
+          else
+            node scripts/changelog-section.js > /tmp/notes.md
+            gh release create "$TAG" --repo "${{ github.repository }}" --title "$TAG" --notes-file /tmp/notes.md
+            echo "should_publish=true" >> "$GITHUB_OUTPUT"
+          fi
       # Staged publishing requires npm >= 11.15.0; setup-node's bundled
       # npm is usually older.
       - run: npm install -g npm@latest
+        if: steps.check.outputs.should_publish == 'true'
       - run: npm ci
+        if: steps.check.outputs.should_publish == 'true'
       - run: npm test
+        if: steps.check.outputs.should_publish == 'true'
       # Stages the tarball on the registry without making it public and
       # without a 2FA prompt (safe for CI) — publishing live requires a
       # maintainer to run `npm stage approve <stage-id>` afterwards.
       - run: npm stage publish
+        if: steps.check.outputs.should_publish == 'true'
