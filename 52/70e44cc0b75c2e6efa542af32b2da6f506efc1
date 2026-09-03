@@ -1,0 +1,21 @@
+scripts/changelog-section.js
+  s_fdef70213eb56e::t_b7acd77df89ba1 1-22
+.github/workflows/release.yml
+  s_fdef70213eb56e::t_ee2e753c831c32 1-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "5270e44cc0b75c2e6efa542af32b2da6f506efc1",
+  "prompts": {},
+  "sessions": {
+    "s_fdef70213eb56e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad322f70-5e6a-4906-8515-3fdd3f858943",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Nicolás José Ramos Bascuñan <80288266+Nicolasramos411@users.noreply.github.com>"
+    }
+  }
+}
