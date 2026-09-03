@@ -1,9 +1,17 @@
 name: Release
 
 # Creates a GitHub Release whenever a push to main changes package.json's
-# version to one that doesn't have a release yet. Publishing to npm is
-# handled separately by publish.yml, triggered by the release this
-# workflow creates.
+# version to one that doesn't have a release yet, then stages it for
+# publishing to npm.
+#
+# The release-creation and npm-stage-publish steps live in this single
+# workflow/job rather than being split across release.yml + publish.yml
+# (release: published) — a release created with the default GITHUB_TOKEN
+# does NOT trigger other workflows (GitHub suppresses events caused by
+# GITHUB_TOKEN to prevent recursive workflow runs), so a separate
+# `on: release: published` workflow would silently never run here. That
+# trigger is still useful for a human manually creating a release from
+# the GitHub UI, so it stays in publish.yml as a fallback path.
 on:
   push:
     branches: [main]
@@ -16,11 +24,15 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          registry-url: 'https://registry.npmjs.org'
       - name: Determine tag and whether it already has a release
         id: check
         env:
@@ -44,3 +56,12 @@ jobs:
             --repo "${{ github.repository }}" \
             --title "${{ steps.check.outputs.tag }}" \
             --notes-file /tmp/notes.md
+      # Staged publishing requires npm >= 11.15.0; setup-node's bundled
+      # npm is usually older.
+      - name: Stage publish to npm
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          npm install -g npm@latest
+          npm ci
+          npm test
+          npm stage publish

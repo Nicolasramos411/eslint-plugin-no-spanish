@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.7] - 2026-09-03
+
+### Fixed
+
+- The auto-release from 0.3.6 created the GitHub Release but never staged
+  the npm publish: a release created with the default `GITHUB_TOKEN`
+  doesn't trigger other workflows (GitHub suppresses recursive workflow
+  runs from that token), so `publish.yml`'s `release: published` trigger
+  silently never fired. `release.yml` now stages the publish itself in
+  the same job instead of relying on that event.
+
 ## [0.3.6] - 2026-09-03
 
 ### Changed

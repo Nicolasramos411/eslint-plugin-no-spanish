@@ -1,5 +1,10 @@
 name: Publish
 
+# Fallback path for a release created by a human through the GitHub UI
+# (or with a PAT). release.yml is the primary path — it creates the
+# release AND stages the npm publish in one job, because a release
+# created with the default GITHUB_TOKEN (as release.yml's does) does not
+# trigger this workflow; see the comment in release.yml.
 on:
   release:
     types: [published]
