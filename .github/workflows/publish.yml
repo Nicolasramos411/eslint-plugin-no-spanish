@@ -19,9 +19,12 @@ jobs:
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
-      # Trusted publishing (OIDC) requires npm >= 11.5.1; setup-node's
-      # bundled npm is usually older.
+      # Staged publishing requires npm >= 11.15.0; setup-node's bundled
+      # npm is usually older.
       - run: npm install -g npm@latest
       - run: npm ci
       - run: npm test
-      - run: npm publish
+      # Stages the tarball on the registry without making it public and
+      # without a 2FA prompt (safe for CI) — publishing live requires a
+      # maintainer to run `npm stage approve <stage-id>` afterwards.
+      - run: npm stage publish
