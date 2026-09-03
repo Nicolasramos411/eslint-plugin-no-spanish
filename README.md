@@ -4,6 +4,9 @@
 [![npm downloads](https://img.shields.io/npm/dw/eslint-plugin-no-spanish.svg)](https://www.npmjs.com/package/eslint-plugin-no-spanish)
 [![CI](https://github.com/Nicolasramos411/eslint-plugin-no-spanish/actions/workflows/ci.yml/badge.svg)](https://github.com/Nicolasramos411/eslint-plugin-no-spanish/actions/workflows/ci.yml)
 [![license](https://img.shields.io/npm/l/eslint-plugin-no-spanish.svg)](./LICENSE)
+[![Known Vulnerabilities](https://snyk.io/test/npm/eslint-plugin-no-spanish/badge.svg)](https://snyk.io/test/npm/eslint-plugin-no-spanish)
+
+[Socket.dev report](https://socket.dev/npm/package/eslint-plugin-no-spanish)
 
 Keeps a JS/TS codebase in English by flagging Spanish comments and
 Spanish variable/function/class names — useful for teams that write code
