@@ -1,0 +1,25 @@
+.github/workflows/publish.yml
+  s_fdef70213eb56e::t_5ad5ac8e8fe89d 3-7
+.github/workflows/release.yml
+  s_fdef70213eb56e::t_8fcb46e3b21aee 4-14,27-29,35,59-67
+package.json
+  s_fdef70213eb56e::t_2972bc74ebac45 3
+CHANGELOG.md
+  s_fdef70213eb56e::t_979085d3483539 8-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "b8cfc3d987b4c88920806cf606b614e8dcb86c5c",
+  "prompts": {},
+  "sessions": {
+    "s_fdef70213eb56e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad322f70-5e6a-4906-8515-3fdd3f858943",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Nicolás José Ramos Bascuñan <80288266+Nicolasramos411@users.noreply.github.com>"
+    }
+  }
+}
