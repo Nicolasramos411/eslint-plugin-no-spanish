@@ -1,5 +1,10 @@
 # eslint-plugin-no-spanish
 
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-no-spanish.svg)](https://www.npmjs.com/package/eslint-plugin-no-spanish)
+[![npm downloads](https://img.shields.io/npm/dw/eslint-plugin-no-spanish.svg)](https://www.npmjs.com/package/eslint-plugin-no-spanish)
+[![CI](https://github.com/Nicolasramos411/eslint-plugin-no-spanish/actions/workflows/ci.yml/badge.svg)](https://github.com/Nicolasramos411/eslint-plugin-no-spanish/actions/workflows/ci.yml)
+[![license](https://img.shields.io/npm/l/eslint-plugin-no-spanish.svg)](./LICENSE)
+
 Keeps a JS/TS codebase in English by flagging Spanish comments and
 Spanish variable/function/class names — useful for teams that write code
 in English but have Spanish-speaking contributors (or vice versa) and

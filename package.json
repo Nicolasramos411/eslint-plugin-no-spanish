@@ -21,14 +21,14 @@
     "localization",
     "code-style"
   ],
-  "author": "Nicolás Ramos (https://github.com/nicolasramos411)",
+  "author": "Nicolás Ramos (https://github.com/Nicolasramos411)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicolasramos411/eslint-plugin-no-spanish.git"
+    "url": "git+https://github.com/Nicolasramos411/eslint-plugin-no-spanish.git"
   },
-  "homepage": "https://github.com/nicolasramos411/eslint-plugin-no-spanish#readme",
+  "homepage": "https://github.com/Nicolasramos411/eslint-plugin-no-spanish#readme",
   "bugs": {
-    "url": "https://github.com/nicolasramos411/eslint-plugin-no-spanish/issues"
+    "url": "https://github.com/Nicolasramos411/eslint-plugin-no-spanish/issues"
   },
   "scripts": {
     "test": "mocha test --recursive"
