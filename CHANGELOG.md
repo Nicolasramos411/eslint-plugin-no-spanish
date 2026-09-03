@@ -5,6 +5,15 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.6] - 2026-09-03
+
+### Changed
+
+- Releases are now created automatically: pushing a `package.json`
+  version bump to `main` creates the tag and GitHub Release (using this
+  file's matching section as the release notes), which still triggers
+  `npm stage publish` the same way a manually-created release did.
+
 ## [0.3.5] - 2026-09-03
 
 ### Changed
