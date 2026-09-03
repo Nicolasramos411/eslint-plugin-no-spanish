@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-no-spanish",
-  "version": "0.3.4",
-  "description": "ESLint rules that keep a JS/TS codebase in English: flags Spanish comments and Spanish variable/function/class names.",
+  "version": "0.3.5",
+  "description": "ESLint rules that flag Spanish comments and Spanish variable/function/class names to keep language usage consistent in a JS/TS codebase.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "bin": {

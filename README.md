@@ -8,10 +8,11 @@
 
 [Socket.dev report](https://socket.dev/npm/package/eslint-plugin-no-spanish)
 
-Keeps a JS/TS codebase in English by flagging Spanish comments and
-Spanish variable/function/class names — useful for teams that write code
-in English but have Spanish-speaking contributors (or vice versa) and
-want that enforced automatically instead of caught in code review.
+Flags Spanish comments and Spanish variable/function/class names to keep
+language usage consistent across a JS/TS codebase — useful for teams
+with mixed-language contributors (e.g. an English-language codebase
+with Spanish-speaking contributors) who want that drift caught
+automatically instead of in code review.
 
 Two rules:
 
