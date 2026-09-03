@@ -1,0 +1,23 @@
+CHANGELOG.md
+  s_fdef70213eb56e::t_55f765b0055637 8-13
+package.json
+  s_fdef70213eb56e::t_22fb74d1e3ddec 3
+README.md
+  s_fdef70213eb56e::t_12d1ce7c5a1618 7-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "3367bba454886906578e7513fc793911e0564021",
+  "prompts": {},
+  "sessions": {
+    "s_fdef70213eb56e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad322f70-5e6a-4906-8515-3fdd3f858943",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Nicolás José Ramos Bascuñan <80288266+Nicolasramos411@users.noreply.github.com>"
+    }
+  }
+}
