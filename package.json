@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-no-spanish",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "ESLint rules that keep a JS/TS codebase in English: flags Spanish comments and Spanish variable/function/class names.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -31,6 +31,9 @@
     "url": "https://github.com/Nicolasramos411/eslint-plugin-no-spanish/issues"
   },
   "scripts": {
+    "build:vendor": "node scripts/build-vendor.js",
+    "pretest": "npm run build:vendor",
+    "prepublishOnly": "npm run build:vendor",
     "test": "mocha test --recursive"
   },
   "peerDependencies": {
@@ -43,14 +46,15 @@
     }
   },
   "dependencies": {
-    "franc-min": "^5.0.0",
     "stopwords-es": "^0.3.0"
   },
   "devDependencies": {
     "@swc/core": "^1.5.0",
     "@typescript-eslint/parser": "^6.21.0",
     "an-array-of-english-words": "^2.0.0",
+    "esbuild": "^0.24.2",
     "eslint": "^8.57.0",
+    "franc-min": "^6.2.0",
     "mocha": "^10.4.0",
     "typescript": "^5.9.3"
   },

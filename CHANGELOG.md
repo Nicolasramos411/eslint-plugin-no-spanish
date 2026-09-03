@@ -5,6 +5,18 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.3] - 2026-09-03
+
+### Security
+
+- Fixed a high-severity ReDoS CVE (GHSA-w5p7-h5w8-2hfq, via `trim@0.0.1`) that
+  reached production through `franc-min@5.0.0 > trigram-utils@1.0.3 > trim`.
+  `franc-min` is now bundled to CJS at build time from `franc-min@6.2.0`
+  (whose `trigram-utils@2` no longer depends on `trim`) instead of being a
+  live `franc-min@5` runtime dependency — `franc-min@6+` is ESM-only, which
+  can't be `require()`d synchronously from the ESLint rule visitor or the
+  CLI worker thread.
+
 ## [0.3.2] - 2026-09-03
 
 ### Added
