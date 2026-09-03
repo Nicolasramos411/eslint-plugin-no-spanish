@@ -1,0 +1,33 @@
+scripts/franc-min-entry.js
+  s_fdef70213eb56e::t_67180b797f556a 1
+scripts/build-vendor.js
+  s_fdef70213eb56e::t_07d5b170d22106 1-21
+lib/utils/detect-spanish.js
+  s_fdef70213eb56e::t_488442d9fb465f 3-9
+package.json
+  s_fdef70213eb56e::t_f9ca6de31ccd59 34-36
+  s_fdef70213eb56e::t_4126b3f6e9bd58 3
+  s_fdef70213eb56e::t_23a389bceaf8bc 55,57
+.gitignore
+  s_fdef70213eb56e::t_151e6814d84c0b 2
+CHANGELOG.md
+  s_fdef70213eb56e::t_e5c03b2263f4c9 8-19
+package-lock.json
+  s_fdef70213eb56e::t_6c79bb5afff72f 3,9,21,23,40-464,1267-1270,1400-1440,1752-1755,1758,2298-2301,2770-2773,2776-2777
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "fd3b102be4bb82c9baae0461ddeb584430fc6c89",
+  "prompts": {},
+  "sessions": {
+    "s_fdef70213eb56e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad322f70-5e6a-4906-8515-3fdd3f858943",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Nicolás José Ramos Bascuñan <80288266+Nicolasramos411@users.noreply.github.com>"
+    }
+  }
+}
